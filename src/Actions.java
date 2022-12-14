@@ -1,27 +1,97 @@
+import org.json.simple.JSONArray;
+
 import java.util.List;
 
 public class Actions {
     private String type;
     private String page;
     private String feature;
-    private String name;
+    private User user;
 
-    private String password;
+    private String startsWith;
 
-    public Actions(){
+    private String rating;
+
+    private String duration;
+
+    private List<String> actors;
+    private List<String> genre;
+
+    public Actions() {
         this.type = null;
         this.page = null;
         this.feature = null;
-        this.name = null;
-        this.password = null;
+        this.user = null;
+        this.startsWith = null;
+        this.rating = null;
+        this.duration = null;
+        this.actors = null;
+        this.genre = null;
     }
 
-    public Actions(String type, String page, String feature, String name, String password) {
+    public Actions(String type, String page, String feature, User user, String startsWith,
+                   String rating, String duration, List<String> actors, List<String> genre) {
         this.type = type;
         this.page = page;
         this.feature = feature;
-        this.name = name;
-        this.password = password;
+        this.user = user;
+        this.startsWith = startsWith;
+        this.rating = rating;
+        this.duration = duration;
+        this.actors = actors;
+        this.genre = genre;
+    }
+
+    public Actions(String type, String page, String feature, User user,
+                   String duration, String rating, List<String> actors, List<String> genre) {
+        this.type = type;
+        this.page = page;
+        this.feature = feature;
+        this.user = user;
+        this.duration = duration;
+        this.rating = rating;
+        this.actors = actors;
+        this.genre = genre;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public List<String> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<String> actors) {
+        this.actors = actors;
+    }
+
+    public List<String> getGenre() {
+        return genre;
+    }
+
+    public void setGenre(List<String> genre) {
+        this.genre = genre;
+    }
+
+    public String getStartsWith() {
+        return startsWith;
+    }
+
+    public void setStartsWith(String startsWith) {
+        this.startsWith = startsWith;
     }
 
     public String getType() {
@@ -48,20 +118,12 @@ public class Actions {
         this.feature = feature;
     }
 
-    public String getName() {
-        return name;
+    public User getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -70,8 +132,12 @@ public class Actions {
                 "type='" + type + '\'' +
                 ", page='" + page + '\'' +
                 ", feature='" + feature + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
+                ", user=" + user +
+                ", startsWith='" + startsWith + '\'' +
+                ", rating='" + rating + '\'' +
+                ", duration='" + duration + '\'' +
+                ", actors=" + actors +
+                ", genre=" + genre +
                 '}';
     }
 }

@@ -1,20 +1,35 @@
-public class Login {
-    private User user;
+import java.util.List;
 
-    public Login(User user){
-        this.user = user;
+public class Login extends Page{
+    private CurrentUser userLoggedIn;
+
+    public Login(CurrentUser userLoggedIn) {
+        this.userLoggedIn = userLoggedIn;
+    }
+    public Login(String title) {
+        super(title);
+        this.userLoggedIn = null;
+    }
+    public Login(String title, CurrentUser userLoggedIn) {
+        super(title);
+        this.userLoggedIn = userLoggedIn;
     }
 
-    public User getUser() {
-        return user;
-        dsa
+    public CurrentUser getUserLoggedIn() {
+        return userLoggedIn;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserLoggedIn(CurrentUser userLoggedIn) {
+        this.userLoggedIn = userLoggedIn;
     }
 
-    public boolean verifyCredentials(String username, String password){
-        return username.equals(this.user.getName()) && password.equals(this.user.getPassword());
+    public boolean verifyCredentials(List<User> userList){
+
+       for(User user : userList) {
+           if(this.userLoggedIn.getName().equals(user.getName()) && this.getUserLoggedIn().getPassword().equals(user.getPassword())) {
+               return true;
+           }
+       }
+       return false;
     }
 }

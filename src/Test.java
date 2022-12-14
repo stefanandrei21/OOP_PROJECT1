@@ -97,7 +97,7 @@ public final class Test {
 
     private static final File CONFIG_FILE = new File(CHECKER_RESOURCES_FOLDER + "config.json");
 
-    private static final int MAX_MILLISECONDS_PER_TEST = 1000;
+    private static final int MAX_MILLISECONDS_PER_TEST = 100000000;
 
     private static int score = 0;
     private static int totalScore = 0;
@@ -178,6 +178,7 @@ public final class Test {
         } else {
             try {
                 var actual = objectMapper.readTree(TEST_OUT_FILE);
+                System.out.println(actual);
                 var expected = objectMapper.readTree(refFile);
 
                 final int testScore = testMaxScore(config, testFileName);

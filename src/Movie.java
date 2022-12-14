@@ -6,26 +6,75 @@ public class Movie {
     private Integer year;
     private Integer duration;
     private List<String> genres;
-
-    private List<String> countriesBanned;
     private List<String> actors;
+    private List<String> countriesBanned;
+
+
+    private Integer numLikes;
+    private Double rating;
+    private Integer numRatings;
 
     public Movie() {
         this.name = null;
         this.year = null;
         this.duration = null;
         this.genres = null;
-        this.countriesBanned = null;
         this.actors = null;
+        this.countriesBanned = null;
+
+        this.numRatings = 0;
+        this.numLikes = 0;
+        this.rating = 0.00;
     }
 
-    public Movie(String name, Integer year, Integer duration, List<String> genres, List<String> countriesBanned, List<String> actors) {
+    public Movie(String name, Integer year, Integer duration,
+                 List<String> genres, List<String> countriesBanned,
+                 List<String> actors) {
         this.name = name;
         this.year = year;
         this.duration = duration;
         this.genres = genres;
-        this.countriesBanned = countriesBanned;
         this.actors = actors;
+        this.countriesBanned = countriesBanned;
+
+    }
+    public Movie(String name, Integer year, Integer duration,
+                 List<String> genres, List<String> countriesBanned,
+                 List<String> actors, Integer numLikes, Double rating,
+                 Integer numRatings) {
+        this.name = name;
+        this.year = year;
+        this.duration = duration;
+        this.genres = genres;
+        this.actors = actors;
+        this.countriesBanned = countriesBanned;
+        this.numLikes = numLikes;
+        this.rating = rating;
+        this.numRatings = numRatings;
+    }
+
+    public Integer getNumLikes() {
+        return numLikes;
+    }
+
+    public void setNumLikes(Integer numLikes) {
+        this.numLikes = numLikes;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating= rating;
+    }
+
+    public Integer getNumRatings() {
+        return numRatings;
+    }
+
+    public void setNumRatings(Integer numRatings) {
+        this.numRatings = numRatings;
     }
 
     public String getName() {
@@ -87,8 +136,11 @@ public class Movie {
                 ", year=" + year +
                 ", duration=" + duration +
                 ", genres=" + genres +
-                ", countriesBanned=" + countriesBanned +
                 ", actors=" + actors +
+                ", countriesBanned=" + countriesBanned +
+                ", numLikes=" + numLikes +
+                ", rating=" + rating +
+                ", numRatings=" + numRatings +
                 '}';
     }
 }

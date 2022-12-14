@@ -12,6 +12,17 @@ public class Input {
         this.actions = actions;
     }
 
+    public User findUserByUsername(String name) {
+        for (User user : userList) {
+            if (user.getName().equals(name)) {
+                return user;
+            }
+        }
+        return null;
+    }
+    public void addUser(User user) {
+        userList.add(user);
+    }
     public List<User> getUserList() {
         return userList;
     }
@@ -40,7 +51,7 @@ public class Input {
     public String toString() {
         return "Input{" +
                 "userList=" + userList +
-                ", movieList=" + movieList +
+                ", currentMovieList=" + movieList +
                 ", actions=" + actions +
                 '}';
     }

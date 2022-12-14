@@ -4,6 +4,7 @@ public class User {
     private String accountType;
     private String country;
     private Integer balance;
+    private boolean loggedIn = false;
 
     public User() {
         this.name = null;
@@ -18,6 +19,22 @@ public class User {
         this.accountType = accountType;
         this.country = country;
         this.balance = balance;
+    }
+
+    public User(User user) {
+        this.name = user.name;
+        this.password = user.password;
+        this.balance = user.balance;
+        this.country = user.country;
+        this.accountType = user.accountType;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 
     public String getName() {
