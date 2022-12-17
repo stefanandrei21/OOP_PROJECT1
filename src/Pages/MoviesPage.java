@@ -41,20 +41,6 @@ public final class MoviesPage extends Page {
 
     }
 
-    /**
-     * returnez filmu cautandu l dupa nume
-     * @param name
-     * @return
-     */
-    public Movie getMovieByName(final String name) {
-        for (Movie mv : this.movieListForPage) {
-            if (mv.getName().equals(name)) {
-               return mv;
-            }
-        }
-        return null;
-    }
-
     public void setMovieList(final List<Movie> movieList) {
         this.movieListForPage = movieList;
     }

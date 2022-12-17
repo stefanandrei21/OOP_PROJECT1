@@ -19,7 +19,7 @@ public final class InputLoader {
     }
 
     /**
-     *
+     * initializer pt inputPath
      * @param inputPathGiven
      */
     public void init(final String inputPathGiven) {
@@ -27,7 +27,9 @@ public final class InputLoader {
     }
 
     /**
-     *
+     *  incep citirea din fisiere
+     *  si iau arrayuri de User
+     *  Movies si actions
      * @return
      */
     public DataBase readData() {
@@ -58,7 +60,7 @@ public final class InputLoader {
     }
 
     /**
-     *
+     *  citesc Arrayul de user
      * @param jsonUserList
      * @return
      */
@@ -82,7 +84,7 @@ public final class InputLoader {
     }
 
     /**
-     *
+     * Citesc Jsonarrayul de movies
      * @param jsonMovieList
      * @return
      */
@@ -121,7 +123,7 @@ public final class InputLoader {
     }
 
     /**
-     *
+     *  citesc json arrayul de actiuni
      * @param jsonActionsList
      * @return
      */

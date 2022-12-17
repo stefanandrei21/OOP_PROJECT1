@@ -17,7 +17,7 @@ public final class CreateJsonFile {
     }
 
     /**
-     *
+     * metoda pentru creearea fisierului json
      * @throws IOException
      */
     public void work() throws IOException {
