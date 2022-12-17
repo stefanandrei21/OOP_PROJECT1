@@ -17,14 +17,15 @@ public final class Output {
         this.currentUser = null;
     }
 
-    public Output(final String error, final List<Movie> currentMovieList, final CurrentUser currentUser) {
+    public Output(final String error, final List<Movie> currentMovieList,
+                  final CurrentUser currentUser) {
         this.error = error;
         this.currentMovieList = new ArrayList<>();
         this.currentUser = new CurrentUser(currentUser);
     }
 
     /**
-     *
+     * getter si setter pt eroare
      * @return
      */
     public String getError() {
@@ -36,7 +37,7 @@ public final class Output {
     }
 
     /**
-     *
+     * getter si setter pt CurrentMovieList
      * @return
      */
     public List<Movie> getCurrentMovieList() {
@@ -48,7 +49,7 @@ public final class Output {
     }
 
     /**
-     *
+     * getter si setter pt current user
      * @return
      */
     public CurrentUser getCurrentUser() {

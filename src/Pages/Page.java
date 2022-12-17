@@ -5,12 +5,12 @@ public class Page {
 
     public Page() { }
 
-    public Page(String title) {
+    public Page(final String title) {
         this.title = title;
     }
 
     /**
-     *
+     * getter pt titlu
      * @return
      */
     public String getTitle() {
@@ -18,15 +18,15 @@ public class Page {
     }
 
     /**
-     *
+     * setter pt titlu
      * @param title
      */
-    public void setTitle(String title) {
+    public void setTitle(final String title) {
         this.title = title;
     }
 
     /**
-     *
+     * to string override method
      * @return
      */
     @Override

@@ -17,7 +17,8 @@ public class User {
         this.country = null;
         this.balance = null;
     }
-    public User(final String name, final String password, final String accountType, final String country, final Integer balance) {
+    public User(final String name, final String password, final String accountType,
+                final String country, final Integer balance) {
         this.name = name;
         this.password = password;
         this.accountType = accountType;
@@ -34,18 +35,22 @@ public class User {
     }
 
     /**
-     *
+     * ovver ride equals
      * @return
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) { return true; }
-        if (!(o instanceof User user)) { return false; }
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User user)) {
+            return false;
+        }
         return getName().equals(user.getName());
     }
 
     /**
-     *
+     * override hashcode
      * @return
      */
     @Override
@@ -54,7 +59,7 @@ public class User {
     }
 
     /**
-     *
+     * verific daca user este logat
      * @return
      */
     public boolean isLoggedIn() {
@@ -62,7 +67,7 @@ public class User {
     }
 
     /**
-     *
+     * setez user logat
      * @return
      */
     public void setLoggedIn(final boolean loggedIn) {
@@ -70,7 +75,7 @@ public class User {
     }
 
     /**
-     *
+     * getter pt nume
      * @return
      */
     public String getName() {
@@ -78,7 +83,7 @@ public class User {
     }
 
     /**
-     *
+     * seter pt nume
      * @return
      */
     public void setName(final String name) {
@@ -86,7 +91,7 @@ public class User {
     }
 
     /**
-     *
+     * getter pt parola
      * @return
      */
     public String getPassword() {
@@ -94,7 +99,7 @@ public class User {
     }
 
     /**
-     *
+     * setter pt parola
      * @return
      */
     public void setPassword(final String password) {
@@ -102,7 +107,7 @@ public class User {
     }
 
     /**
-     *
+     * getter pt account type
      * @return
      */
     public String getAccountType() {
@@ -110,7 +115,7 @@ public class User {
     }
 
     /**
-     *
+     * setter pt account type
      * @return
      */
     public void setAccountType(final String accountType) {
@@ -118,7 +123,7 @@ public class User {
     }
 
     /**
-     *
+     * getter pt country
      * @return
      */
     public String getCountry() {
@@ -126,7 +131,7 @@ public class User {
     }
 
     /**
-     *
+     * setter pt country
      * @return
      */
     public void setCountry(final String country) {
@@ -134,7 +139,7 @@ public class User {
     }
 
     /**
-     *
+     * getter pt balanta
      * @return
      */
     public Integer getBalance() {
@@ -142,7 +147,7 @@ public class User {
     }
 
     /**
-     *
+     * setter pt balanta
      * @return
      */
     public void setBalance(final Integer balance) {
@@ -150,7 +155,7 @@ public class User {
     }
 
     /**
-     *
+     * Override tostring
      * @return
      */
     @Override

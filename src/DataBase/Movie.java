@@ -1,7 +1,6 @@
 package DataBase;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public final class Movie {
@@ -24,7 +23,6 @@ public final class Movie {
         this.genres = null;
         this.actors = null;
         this.countriesBanned = null;
-
         this.numRatings = 0;
         this.numLikes = 0;
         this.rating = 0.00;
@@ -70,7 +68,7 @@ public final class Movie {
     }
 
     /**
-     *
+     * verifica daca contine actorul in lista de actori
      * @param cntActors
      * @return
      */
@@ -78,6 +76,11 @@ public final class Movie {
         return this.actors.containsAll(cntActors);
     }
 
+    /**
+     * verifica daca contine genul
+     * @param genre
+     * @return
+     */
     public boolean containsGenre(final List<String> genre) {
         return this.genres.containsAll(genre);
     }

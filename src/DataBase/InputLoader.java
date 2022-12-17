@@ -30,7 +30,7 @@ public final class InputLoader {
      *
      * @return
      */
-    public Input readData() {
+    public DataBase readData() {
         JSONParser jsonParser = new JSONParser();
         List<CurrentUser> userList = null;
         List<Movie> movieList = null;
@@ -52,7 +52,7 @@ public final class InputLoader {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        Input input = new Input();
+        DataBase input = DataBase.getInstance();
         input.init(userList, movieList, actions);
         return input;
     }
@@ -135,12 +135,10 @@ public final class InputLoader {
                 String countStr = (String) ((JSONObject) jsonAction).get("count");
                 Long auxRate = (Long) ((JSONObject) jsonAction).get("rate");
                 Integer rate = 0;
-                if (auxRate != null)
+                if (auxRate != null) {
                     rate = auxRate.intValue();
-//                Integer rate = 0;
-//                if (auxRate != null) {
-//                    rate = Integer.parseInt(auxRate);
-//                }
+                }
+
                 Integer count = 0;
                 if (countStr != null) {
                     count = Integer.parseInt(countStr);
@@ -162,7 +160,6 @@ public final class InputLoader {
                     password = (String) jsonCredentials.get("password");
                     country = (String) jsonCredentials.get("country");
                     accountType = (String) jsonCredentials.get("accountType");
-
                     if ((String) (jsonCredentials.get("balance")) != null) {
                         String balanceAux = (String) (jsonCredentials.get("balance"));
                         balance = Integer.parseInt(balanceAux);;
@@ -203,14 +200,10 @@ public final class InputLoader {
                         }
                     }
                 }
-
                 actionsList.add(new Actions(type, page, feature, userFromActions, startsWith,
                         rating, duration, actors, genre, movie, count, rate));
             }
         }
-
-
-
         return actionsList;
     }
 

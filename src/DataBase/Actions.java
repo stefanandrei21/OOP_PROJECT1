@@ -144,19 +144,19 @@ public final class Actions {
 
     @Override
     public String toString() {
-        return "Actions{" +
-                "type='" + type + '\'' +
-                ", page='" + page + '\'' +
-                ", feature='" + feature + '\'' +
-                ", rate=" + rate +
-                ", count=" + count +
-                ", user=" + user +
-                ", movie='" + movie + '\'' +
-                ", startsWith='" + startsWith + '\'' +
-                ", rating='" + rating + '\'' +
-                ", duration='" + duration + '\'' +
-                ", actors=" + actors +
-                ", genre=" + genre +
-                '}';
+        return "Actions{"
+                + "type='" + type + '\''
+                + ", page='" + page + '\''
+                + ", feature='" + feature + '\''
+                + ", rate=" + rate
+                + ", count=" + count
+                + ", user=" + user
+                + ", movie='" + movie + '\''
+                + ", startsWith='" + startsWith + '\''
+                + ", rating='" + rating + '\''
+                + ", duration='" + duration + '\''
+                + ", actors=" + actors
+                + ", genre=" + genre
+                + '}';
     }
 }
