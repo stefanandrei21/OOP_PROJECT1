@@ -79,7 +79,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Database.User{" +
                 "name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", accountType='" + accountType + '\'' +

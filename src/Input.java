@@ -49,7 +49,7 @@ public class Input {
 
     @Override
     public String toString() {
-        return "Input{" +
+        return "Database.Input{" +
                 "userList=" + userList +
                 ", currentMovieList=" + movieList +
                 ", actions=" + actions +

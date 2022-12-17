@@ -90,7 +90,7 @@ public class CurrentUser extends User{
 
     @Override
     public String toString() {
-        return  super.toString() + "CurrentUser{" +
+        return  super.toString() + "Database.CurrentUser{" +
                 "tokensCount=" + tokensCount +
                 ", numFreePremiumMovies=" + numFreePremiumMovies +
                 ", purchasedMovies=" + purchasedMovies +

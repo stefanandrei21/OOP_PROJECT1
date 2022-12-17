@@ -53,6 +53,13 @@ public class Movie {
         this.numRatings = numRatings;
     }
 
+    public boolean containsActors(List<String> actors) {
+        return this.actors.containsAll(actors);
+    }
+
+    public boolean containsGenre(List<String> genre) {
+        return this.genres.containsAll(genre);
+    }
     public Integer getNumLikes() {
         return numLikes;
     }
@@ -131,7 +138,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" +
+        return "Database.Movie{" +
                 "name='" + name + '\'' +
                 ", year=" + year +
                 ", duration=" + duration +

@@ -1,10 +1,13 @@
+import DataBase.CurrentUser;
+import DataBase.Movie;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Output {
+public final class Output {
     private String error;
-    private List<Movie> currentMovieList;
-    private CurrentUser currentUser;
+    private List<Movie> currentMovieList = new ArrayList<>();
+    private CurrentUser currentUser = new CurrentUser();
 
 
 
@@ -14,42 +17,54 @@ public class Output {
         this.currentUser = null;
     }
 
-    public Output(String error, List<Movie> currentMovieList, CurrentUser currentUser) {
+    public Output(final String error, final List<Movie> currentMovieList, final CurrentUser currentUser) {
         this.error = error;
-        this.currentMovieList = currentMovieList;
-        this.currentUser = currentUser;
+        this.currentMovieList = new ArrayList<>();
+        this.currentUser = new CurrentUser(currentUser);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getError() {
         return error;
     }
 
-    public void setError(String error) {
+    public void setError(final String error) {
         this.error = error;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Movie> getCurrentMovieList() {
         return currentMovieList;
     }
 
-    public void setCurrentMovieList(List<Movie> currentMovieList) {
-        this.currentMovieList = currentMovieList;
+    public void setCurrentMovieList(final List<Movie> currentMovieList) {
+        this.currentMovieList = new ArrayList<>(currentMovieList);
     }
 
+    /**
+     *
+     * @return
+     */
     public CurrentUser getCurrentUser() {
         return currentUser;
     }
 
-    public void setCurrentUser(CurrentUser currentUser) {
+    public void setCurrentUser(final CurrentUser currentUser) {
         this.currentUser = currentUser;
     }
 
     @Override
     public String toString() {
-        return "Output{" +
-                "error='" + error + '\'' +
-                ", currentMovieList=" + currentMovieList +
-                ", currentUser=" + currentUser +
-                '}';
+        return "Output{"
+                + "error='" + error + '\''
+                + ", currentMovieList=" + currentMovieList
+                + ", currentUser=" + currentUser
+                + '}';
     }
 }

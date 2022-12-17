@@ -18,18 +18,19 @@ public class MoviesPage extends Page{
     public List<Movie> getMovieList() {
         return movieListForPage;
     }
-    public void setMovieListNoCountry(String country) {
+    public List<Movie> getMovieListNoCountry(String country) {
         List<Movie> movieListNoBannedCountry = new ArrayList<Movie>();
         for (Movie movie : movieListForPage) {
             for(String banned : movie.getCountriesBanned()) {
-
+                //System.out.println(banned + " si " + country);
                 if(!banned.equals(country)){
+
                     movieListNoBannedCountry.add(movie);
                 }
             }
 
         }
-        movieListForPage = movieListNoBannedCountry;
+        return  movieListNoBannedCountry;
 
     }
 
@@ -37,24 +38,9 @@ public class MoviesPage extends Page{
         this.movieListForPage = movieList;
     }
 
-    public void sortByDuration(String duration, String rating) {
-        if (duration.equals("deacresing")) {
-            Collections.sort(this.movieListForPage, new Comparator<Movie>() {
-                @Override
-                public int compare(Movie o1, Movie o2) {
-                    return o1.getDuration() - o2.getDuration();
-                }
-            });
-        } else if (duration.equals("increasing")) {
-            Collections.sort(this.movieListForPage, new Comparator<Movie>() {
-                @Override
-                public int compare(Movie o1, Movie o2) {
-                    return o2.getDuration() - o1.getDuration();
-                }
-            });
-        }
-    }
 
+
+    public void checkActor(String actor) {}
     @Override
     public String toString() {
         return "MoviesPage{" +
